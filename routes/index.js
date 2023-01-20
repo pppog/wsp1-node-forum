@@ -12,25 +12,27 @@ const pool = mysql.createPool({
 const promisePool = pool.promise();
 
 router.get('/', async function (req, res, next) {
-    const [rows] = await promisePool.query("SELECT * FROM ja15forum");
-    res.json({ rows });
+    const [rows] = await promisePool.query("SELECT * FROM lo28forum");
+res.render('index.njk', {
+    rows: rows,
+    title: 'Forum',
+});
 });
 
 router.get('/new', async function (req, res, next) {
+    const [users] = await promisePool.query("SELECT * FROM lo28users");
     res.render('new.njk', {
         title: 'Nytt inlägg',
+        users,
     });
 });
 
 router.post('/new', async function (req, res, next) {
     const { author, title, content } = req.body;
-    const [rows] = await promisePool.query("INSERT INTO lo28forum (author, title, content) VALUES (?, ?, ?)", [author, title, content]);
+    const [rows] = await promisePool.query("INSERT INTO lo28forum (authorId, title, content) VALUES (?, ?, ?)", [author, title, content]);
     res.redirect('/');
 });
 
-res.render('index.njk', {
-    rows: rows,
-    title: 'Forum',
-});
+
 
 module.exports = router;
