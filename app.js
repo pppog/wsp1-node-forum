@@ -9,6 +9,7 @@ const indexRouter = require('./routes/index');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use(express.static('public'))
 
 nunjucks.configure('views', {
     autoescape: true,

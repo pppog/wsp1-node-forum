@@ -1,8 +1,10 @@
+@use "reset";
+
 .container {
     width: min(80ch, 100vw - 2rem);
     margin-inline: auto;
 }
 
-body {
-    background-color: blue;
+textarea {
+    background-image: url("https://cdn.discordapp.com/attachments/764150645174960178/1023944345545621524/unknown.png");
 }
