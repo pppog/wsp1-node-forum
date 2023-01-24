@@ -1,9 +1,11 @@
+<h1><a href="/">Home</a></h1>
 <form action="/new" method="post">
     <label for="author">Författare</label>
     <select name="author" id="author">
     {% for user in users %}
         <option value="{{ user.id }}">{{ user.name }}</option>
     {% endfor %}
+    <
 </select>
     <label for="title">Titel</label>
     <input type="text" name="title" id="title">
