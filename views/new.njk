@@ -1,18 +1,20 @@
 {% extends "layout.njk" %}
 {% block  content %}
-<h1><a href="/">Home</a></h1>
 <form action="/new" method="post">
     <label for="author">Författare</label>
+    <label for="title">Titel</label>
+    <br>
     <select name="author" id="author">
     {% for user in users %}
         <option value="{{ user.id }}">{{ user.name }}</option>
     {% endfor %}
-    <
 </select>
-    <label for="title">Titel</label>
     <input type="text" name="title" id="title">
+    <br>
     <label for="content">Innehåll</label>
-    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+    <br>
+    <textarea name="content" id="content" cols="30" rows="10" placeholder="Write your text here"></textarea>
+    <br>
     <button type="submit">Skicka</button>
 </form>
 {% endblock %}
