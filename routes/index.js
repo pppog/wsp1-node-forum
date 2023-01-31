@@ -12,9 +12,6 @@ const pool = mysql.createPool({
 
 const promisePool = pool.promise();
 
-const multer  = require('multer')
-const upload = multer({ dest: 'uploads/' })
-
 router.get('/', async function (req, res, next) {
     const [rows] = await promisePool.query("SELECT * FROM lo28forum ORDER BY createdAt DESC");
 res.render('index.njk', {
