@@ -18285,6 +18285,42 @@ progress {
     display: none !important;
   }
 }
+:root {
+  --mo-secondary-color: #bbbbbb;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 1rem;
+  color: black;
+}
+
+.big {
+  font-size: 2rem;
+  padding: 0rem;
+  margin: 0rem;
+}
+
+.card-img-top {
+  border-radius: 1000px;
+  width: 3rem;
+}
+
+.card {
+  padding: 10px;
+}
+
+.title {
+  margin-left: 8.8%;
+}
+
+.btn {
+  box-shadow: 2px 2px 3px black;
+}
+
 body {
   background-color: #252525;
   color: #ffffff;
@@ -18296,16 +18332,12 @@ main {
 }
 
 textarea {
-  background-image: url("https://cdn.discordapp.com/attachments/764150645174960178/1023944345545621524/unknown.png");
+  background-image: url(../img/alexandro.png);
   background-size: contain;
 }
 
 a {
   color: #00ddff;
-}
-
-.text-muted {
-  color: #aaaaaa !important;
 }
 
 /*# sourceMappingURL=style.css.map */
