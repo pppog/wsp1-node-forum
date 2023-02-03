@@ -5,35 +5,14 @@
   <li>
 <div class="card" style="width: 100%;">
   <img src="img/alexandro.png" class="card-img-top" alt="alekandro">
-  <p>Alexandro #{{ row.authorId }}</p>
+  <p>{{ row.name }}</p>
   <div class="card-body">
     <h5 class="card-title">{{ row.title }}</h5>
-    <p class="card-text">{{ row.content }}</p>
-    <a href="img/alexandro.png" class="btn btn-primary">Kommentera</a>
+    <a href="/post/{{ row.id }}" class="btn btn-primary">Visit post</a>
   </div>
 </div>
 <small class="text-muted">{{ row.createdAt }}</small>
 </li>
 {% endfor %}
 </ul>
-<!-- <ul>
-    {% for row in rows %}
-    <li>
-        <div class="col">
-          <div class="card shadow-sm">
-              <div class="card-body">
-              <p class="card-text">{{ row.title }}{{ row.content }}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Kommentera</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Modifiera</button>
-                </div>
-                <small class="text-muted">{{ row.createdAt }}</small>
-              </div>
-            </div>
-          </div>
-        </div>
-    </li>
-    {% endfor %}
-</ul> -->
 {% endblock %}

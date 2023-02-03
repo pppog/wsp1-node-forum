@@ -13,9 +13,23 @@ const pool = mysql.createPool({
 const promisePool = pool.promise();
 
 router.get('/', async function (req, res, next) {
-    const [rows] = await promisePool.query("SELECT * FROM lo28forum ORDER BY createdAt DESC");
+    const [rows] = await promisePool.query("SELECT * FROM lo28forum JOIN lo28users ON lo28forum.authorId = lo28users.id ORDER BY createdAt DESC");
 res.render('index.njk', {
     rows: rows,
+    title: 'Forum',
+});
+});
+
+router.get('/post/:id', async function (req, res, next) {
+    const [rows] = await promisePool.query(
+    `SELECT lo28forum.*, lo28users.name AS username
+    FROM lo28forum
+    JOIN lo28users ON lo28forum.authorId = lo28users.id
+    WHERE lo28forum.id = ?;`,
+    [req.params.id]
+    );
+res.render('post.njk', {
+    post: rows,
     title: 'Forum',
 });
 });
